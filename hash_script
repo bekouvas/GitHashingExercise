@@ -1,4 +1,4 @@
-# AEM= 10524
+Create a script in a shell of your choice named hash_script, where it should take a 4-digit integer as input and output a hash of the input.# AEM= 10524
 input_integer="0524"
 
 # Calculate the hash of the integer using SHA-256 and save it to hash_output.txt
