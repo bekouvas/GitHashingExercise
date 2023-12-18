@@ -1,0 +1,6 @@
+# AEM= 10524
+input_integer="0524"
+
+# Calculate the hash of the integer using SHA-256 and save it to hash_output.txt
+echo -n "$input_integer" | sha256sum > hash_output.txt
+echo "Hash generated and saved to hash_output.txt"
