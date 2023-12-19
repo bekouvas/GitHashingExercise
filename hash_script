@@ -1,6 +1,31 @@
-Create a script in a shell of your choice named hash_script, where it should take a 4-digit integer as input and output a hash of the input.# AEM= 10524
-input_integer="0524"
+# FOR AEM= 10524
+#input_integer="0524"
 
 # Calculate the hash of the integer using SHA-256 and save it to hash_output.txt
-echo -n "$input_integer" | sha256sum > hash_output.txt
-echo "Hash generated and saved to hash_output.txt"
+#echo -n "$input_integer" | sha256sum > hash_output.txt
+#echo "Hash generated and saved to hash_output.txt"
+
+#---------------------------------------------------------------------------------
+
+
+#FOR INPUT FROM THE USER (INPUT INTEGER = 0524 FROM AEM)
+
+# Check if exactly one argument is provided
+if [ "$#" -ne 1 ]; then
+    echo "Usage: $0 <4-digit-integer>"
+    exit 1
+fi
+
+# Validate if the argument is a 4-digit integer
+if ! [[ "$1" =~ ^[0-9]{4}$ ]]; then
+    echo "Error: Please provide a valid 4-digit integer."
+    exit 1
+fi
+
+# Input value
+input=$1
+
+# Hash the input using SHA-256 and save the output to hash_output.txt
+echo -n "$input" | sha256sum > hash_output.txt
+
+echo "Hash was successfull! The outpout is saved to hash_output.txt."
